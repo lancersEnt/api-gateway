@@ -24,4 +24,4 @@ import { IntrospectAndCompose } from '@apollo/gateway';
     }),
   ],
 })
-export class AppModule {}
+export class GatewayModule {}
