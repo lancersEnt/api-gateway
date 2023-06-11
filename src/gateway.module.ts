@@ -11,6 +11,10 @@ import { IntrospectAndCompose } from '@apollo/gateway';
         supergraphSdl: new IntrospectAndCompose({
           subgraphs: [
             {
+              name: 'users',
+              url: 'http://localhost:9009/graphql',
+            },
+            {
               name: 'posts',
               url: 'http://localhost:9119/graphql',
             },
