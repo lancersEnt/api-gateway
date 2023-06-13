@@ -1,18 +1,27 @@
-import { Module } from '@nestjs/common';
+import {
+  HttpException,
+  HttpStatus,
+  Module,
+  UnauthorizedException,
+} from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloGatewayDriver, ApolloGatewayDriverConfig } from '@nestjs/apollo';
 import { IntrospectAndCompose } from '@apollo/gateway';
+import { INVALID_AUTH_TOKEN } from './gateway.constants';
+import { verify } from 'jsonwebtoken';
+import { GraphQLDataSource } from './graphql-data-source';
 
 @Module({
   imports: [
     GraphQLModule.forRoot<ApolloGatewayDriverConfig>({
       driver: ApolloGatewayDriver,
       gateway: {
+        buildService: (args) => new GraphQLDataSource(args),
         supergraphSdl: new IntrospectAndCompose({
           subgraphs: [
             {
               name: 'users',
-              url: 'http://localhost:9009/graphql',
+              url: 'http://localhost:9999/graphql',
             },
             {
               name: 'posts',
