@@ -1,14 +1,7 @@
-import {
-  HttpException,
-  HttpStatus,
-  Module,
-  UnauthorizedException,
-} from '@nestjs/common';
+import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloGatewayDriver, ApolloGatewayDriverConfig } from '@nestjs/apollo';
 import { IntrospectAndCompose } from '@apollo/gateway';
-import { INVALID_AUTH_TOKEN } from './gateway.constants';
-import { verify } from 'jsonwebtoken';
 import { GraphQLDataSource } from './graphql-data-source';
 
 @Module({
