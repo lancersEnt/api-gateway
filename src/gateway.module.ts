@@ -14,7 +14,7 @@ import { GraphQLDataSource } from './graphql-data-source';
           subgraphs: [
             {
               name: 'users',
-              url: 'http://localhost:9999/graphql',
+              url: 'http://localhost:9009/graphql',
             },
             {
               name: 'posts',
@@ -24,6 +24,18 @@ import { GraphQLDataSource } from './graphql-data-source';
               name: 'comments',
               url: 'http://localhost:9229/graphql',
             },
+            {
+              name: 'klads',
+              url: 'http://localhost:9339/graphql',
+            },
+            // {
+            //   name: 'mailer',
+            //   url: 'http://localhost:9449/graphql',
+            // },
+            // {
+            //   name: 'notification',
+            //   url: 'http://localhost:9559/graphql',
+            // },
           ],
         }),
       },
