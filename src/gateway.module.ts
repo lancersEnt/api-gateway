@@ -32,10 +32,10 @@ import { GraphQLDataSource } from './graphql-data-source';
             //   name: 'mailer',
             //   url: 'http://localhost:9449/graphql',
             // },
-            // {
-            //   name: 'notification',
-            //   url: 'http://localhost:9559/graphql',
-            // },
+            {
+              name: 'notification',
+              url: 'http://localhost:9559/graphql',
+            },
           ],
         }),
       },
