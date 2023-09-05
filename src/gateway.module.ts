@@ -36,6 +36,10 @@ import { GraphQLDataSource } from './graphql-data-source';
               name: 'notification',
               url: 'http://localhost:9559/graphql',
             },
+            {
+              name: 'messages',
+              url: 'http://localhost:9669/graphql',
+            },
           ],
         }),
       },
